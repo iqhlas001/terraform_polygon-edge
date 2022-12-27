@@ -137,7 +137,7 @@ resource "null_resource" "download_package" {
     downloaded = local.downloaded
   }
 
-  provisioner "local-exec" {
+  provisioner "remote-exec" {
     command = "curl -L -o ${local.downloaded} ${local.package_url}"
   }
 }
